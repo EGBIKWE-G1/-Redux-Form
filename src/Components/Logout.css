@@ -18,6 +18,7 @@
   font-family: "Inter";
   border-radius: 3px;
 }
+
 .logout__button:focus {
   background: rgb(77, 110, 110);
 }

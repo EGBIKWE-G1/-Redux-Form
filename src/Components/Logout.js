@@ -1,10 +1,12 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { logout } from "../features/userSlice";
+import { useSelector } from "react-redux";
+import { logout, selectUser } from "../features/userSlice";
 import "./Logout.css";
 
 const Logout = () => {
-  
+  const user = useSelector(selectUser);
+
   const dispatch = useDispatch();
   const handleLogout = (e) => {
     e.preventDefault();
@@ -15,7 +17,7 @@ const Logout = () => {
   return (
     <div className="logout">
       <h1>
-      Welcome <span className="user__name">Godwin</span>
+      Welcome <span className="user__name">{user.name}</span>
       </h1>
        <button className="logout__button" onClick={(e) => handleLogout(e)}>Logout</button>
     </div>
